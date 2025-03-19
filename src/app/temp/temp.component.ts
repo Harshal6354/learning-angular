@@ -14,7 +14,7 @@ export class TempComponent {
   UserName:string='Rahul';
   @ViewChild('dynamicTem')dynamicTem:TemplateRef<any> | undefined;
   @ViewChild('dynamicCpntainer',{read:ViewContainerRef})dynamicCpntainer:ViewContainerRef | undefined
-   
+  
   ChangetheLOAD(){
     if(this.dynamicTem){
       this.dynamicCpntainer?.createEmbeddedView(this.dynamicTem)

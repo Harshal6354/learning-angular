@@ -1,0 +1,28 @@
+<p>ng-container works!</p>
+
+<div class="row">
+    <div class="col-3">
+       <ng-container *ngIf="isvisible">
+        <span>i am from india</span>
+       </ng-container> 
+    </div>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>studentName</th>
+            <th>contactNo</th>
+            <th>emailId</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of userlist ">
+        <td>{{item.studentName}}</td>
+        <td>{{item.contactNo}}</td>
+        <td>{{item.emailId}}</td>
+        </tr>
+        
+    </tbody>
+    
+
+</table>
