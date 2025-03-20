@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
-
 @Component({
   selector: 'app-temp',
   standalone: true,
@@ -9,7 +8,7 @@ import { Component, TemplateRef, ViewChild, ViewContainerRef } from '@angular/co
   styleUrl: './temp.component.css'
 })
 export class TempComponent {
- 
+  
   isloggedInUser:boolean=false;
   UserName:string='Rahul';
   @ViewChild('dynamicTem')dynamicTem:TemplateRef<any> | undefined;
