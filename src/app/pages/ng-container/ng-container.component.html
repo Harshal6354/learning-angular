@@ -1,4 +1,6 @@
 <p>ng-container works!</p>
+<app-temp [message]="'my new compo'"></app-temp>
+<img src="images/nature.jpg" alt="nature" style="width: 100px; height: 100px;">
 <div class="row">
     <div class="col-3">
         <ng-container *ngIf="isvisible">
@@ -11,7 +13,6 @@
     <table class="table table-bordered">
         <thead class="table-dark">
             <tr>
-
                 <th>srno</th>
                 <th>Student Name</th>
                 <th>Contact No</th>
@@ -46,4 +47,5 @@
 
         </tbody>
     </table>
+    
 </div>

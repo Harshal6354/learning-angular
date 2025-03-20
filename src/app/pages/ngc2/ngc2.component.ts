@@ -5,8 +5,9 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './ngc2.component.html',
-  styleUrl: './ngc2.component.css'
+  styleUrl: './ngc2.component.css'  ,// ✅ Corrected here
 })
 export class Ngc2Component {
 
 }
+
