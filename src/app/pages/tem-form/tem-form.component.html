@@ -1,0 +1,78 @@
+<form class="needs-validation" novalidate #form="ngForm">
+    <div class="form-row" >
+      <div class="col-md-4 mb-3">
+        <label for="validationCustom01">First name</label>
+        <input type="text" name="firstname" #fname="ngModel" [(ngModel)]="studentObj.firstname" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required minlength="3">
+        <div class="text-danger">
+            @if( (fname.touched || fname.dirty) && fname.errors?.['required']){
+                <span>this is required</span>
+            }
+            @else if (fname.errors?.['minlength']) {
+                <span>Min 3 character</span>
+            }
+        </div>
+        <div>{{fname.errors|json}}</div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationCustom02">Last name</label>
+        <input type="text"  name="lastname" [(ngModel)]="studentObj.lastname" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationCustomUsername">Username</label>
+        <div class="input-group">
+               <input type="text"  name="username" [(ngModel)]="studentObj.username" class="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
+          <div class="invalid-feedback">
+            Please choose a username.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="validationCustom03">City</label>
+        <input type="text"  name="city" [(ngModel)]="studentObj.city" class="form-control" id="validationCustom03" placeholder="City" required>
+        <div class="invalid-feedback">
+          Please provide a valid city.
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="validationCustom04">State</label>
+        <select class="form-select" name="state" [(ngModel)]="studentObj.state">
+            <option selected disabled value="">choose..</option>
+            <option>Gujarat</option>
+            <option>Maharastra</option>
+            <option>Rajsthan</option>
+        </select>
+        <div class="invalid-feedback">
+          Please provide a valid state.
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="validationCustom05">Zip</label>
+        <input type="text"  name="zipcode" [(ngModel)]="studentObj.zipcode" class="form-control" id="validationCustom05" placeholder="Zip" required>
+        <div class="invalid-feedback">
+          Please provide a valid zip.
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input"  name="isAgreeALLterm" [(ngModel)]="studentObj.isAgreeALLterm" type="checkbox" value="" id="invalidCheck" required>
+        <label class="form-check-label" for="invalidCheck">
+          Agree to terms and conditions
+        </label>
+        <div class="invalid-feedback">
+          You must agree before submitting.
+        </div>
+      </div>
+    </div>
+    <div>{{form.invalid |json}}</div>
+    <button class="btn btn-primary" [disabled]="form.invalid" type="submit" (click)="submit()">Submit form</button>
+    <button class="btn btn-dark"  type="submit" (click)="resetform()">resetform</button>
+
+  </form>
+  <div><h6>{{myVlaue | json}} </h6>
+  </div>
