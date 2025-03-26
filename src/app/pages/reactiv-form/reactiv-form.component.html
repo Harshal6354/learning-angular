@@ -1,5 +1,5 @@
 <div class="container-fluid  border border-secondary  card-title"><h1 style="color: rgb(109, 109, 208);">Reactive form</h1></div>
-<form class="needs-validation" [formGroup]="studentData">
+<form class="needs-validation" [formGroup]="studentData"  (ngSubmit)="onsubmit()">
     <div class="form-row">
       <div class="col-md-4 mb-3">
         <label for="validationCustom01">First name</label>
@@ -22,8 +22,7 @@
       </div>
       <div class="col-md-4 mb-3">
         <label for="validationCustomUsername">Username</label>
-        <div class="input-group">
-         
+        <div class="input-group">  
           <input type="text" class="form-control" name="username" formControlName="username" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
           <div class="invalid-feedback">
             Please choose a username.

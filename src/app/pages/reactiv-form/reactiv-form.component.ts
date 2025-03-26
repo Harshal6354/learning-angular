@@ -19,9 +19,15 @@ export class ReactivFormComponent {
     zipcode:new FormControl(""),
     isAcceptable:new FormControl(""),
   })
-  submit:unknown;
+  submit:any;
+    invalid:Boolean=true;
   onsubmit(){
-    debugger;
-    this.submit=this.studentData.value;
+    if (this.studentData.valid) {
+      console.log('Form Submitted:', this.studentData.value);
+  
+    }
+    else {
+      console.log("invalid");
+    }
   }
 }

@@ -7,12 +7,15 @@ import { Ngc2Component } from './pages/ngc2/ngc2.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { ViewChild } from '@angular/core';
 import { ViewchildComponent } from './pages/viewchild/viewchild.component';
+import { TemFormComponent } from './pages/tem-form/tem-form.component';
+import { ReactivFormComponent } from './pages/reactiv-form/reactiv-form.component';
+import { PipesComponent } from './pages/pipes/pipes.component';
 
 export const routes: Routes = [
 
     {
         path: '',
-        redirectTo: '',
+        redirectTo: 'temp',
         pathMatch: 'full'
     },
     {
@@ -25,7 +28,6 @@ export const routes: Routes = [
         component: TempComponent
     }
     ,
-    
     {
         path: 'ng-con',
         component: NgContainerComponent
@@ -41,5 +43,17 @@ export const routes: Routes = [
     {
         path:'viewchild',
         component:ViewchildComponent
+    },
+    {
+        path:'tempForm',
+        component:TemFormComponent
+    },
+    {
+        path:'reactiveform',
+        component:ReactivFormComponent
+    },
+    {
+        path:'rjx',
+        component:PipesComponent
     }
 ];

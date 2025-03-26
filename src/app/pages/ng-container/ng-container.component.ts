@@ -15,7 +15,7 @@ export class NgContainerComponent  implements OnInit{
     this.getUser();
     
   }
- isvisible:boolean=true;
+isvisible:boolean=true;
 api_key='https://projectapi.gerasim.in/api/CollegeProject/getProjectByUser'
 http=inject(HttpClient)
 userlist:any[]=[]
@@ -28,7 +28,5 @@ getUser(){
     this.isApi=false;
   })
  }
-
- 
 
 }

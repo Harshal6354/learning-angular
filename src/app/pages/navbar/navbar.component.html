@@ -22,8 +22,13 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="reactiveform">reactiveform</a>
       </li>
-     
-     
+      <li class="nav-item">
+        <a class="nav-link" routerLink="rjx">rjx</a>
+      </li>
+      <select [(ngModel)]="selectrole" (ngModelChange)="Myrole($event)">
+        <option value="user">User role</option>
+        <option value="guest">Guest role</option>
+      </select>   
     </ul>
     </div>
   </nav>
