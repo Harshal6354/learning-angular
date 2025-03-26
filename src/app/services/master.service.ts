@@ -11,22 +11,28 @@ export class MasterService {
  public onRolechange$:Subject<string>=new Subject<string>
  
  public Role$:BehaviorSubject<string>=new BehaviorSubject<string>('')
- private userSubject = new BehaviorSubject<any>(null);
+ 
+ private userSubject = new BehaviorSubject<any>(this.getSessionData());
+
  user$ = this.userSubject.asObservable();
 
- // Update user data
+ // Store user data in BehaviorSubject and Session Storage
  setUserData(user: any) {
    this.userSubject.next(user);
+   sessionStorage.setItem('userData', JSON.stringify(user)); // Save to session storage
  }
 
- // Get user data
+ // Retrieve user data from Session Storage
+ getSessionData() {
+   const data = sessionStorage.getItem('userData');
+   return data ? JSON.parse(data) : null;
+ }
+
+ // Get current user data
  getUserData() {
    return this.userSubject.value;
  }
 
- // Clear user data (for logout)
- clearUserData() {
-   this.userSubject.next(null);
- }
+ 
 
 }

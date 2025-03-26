@@ -12,30 +12,39 @@ import { MasterService } from '../../services/master.service';
 })
 export class TemFormComponent {
   master = inject(MasterService)
+  
 
-  studentObj: any = {
+  studentObj = {
     firstname: '',
     lastname: '',
     email: '',
-    
+    city: '',
+    state: '',
+    zipcode: '',
   }
   myVlaue: any;
   // submit() {
   //  this.master.user$=this.studentObj
   // }
-  submit() {
+   submit() {
     this.master.setUserData(this.studentObj);
+    debugger;
     console.log('User Data Stored:', this.master.getUserData());
   }
+ 
   resetform() {
     this.studentObj = {
       firstname: '',
       lastname: '',
-      username: '',
+      email: '',
       city: '',
       state: '',
       zipcode: '',
     }
+ 
   }
+
+
+
 
 }

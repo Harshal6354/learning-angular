@@ -10,6 +10,7 @@ import { ViewchildComponent } from './pages/viewchild/viewchild.component';
 import { TemFormComponent } from './pages/tem-form/tem-form.component';
 import { ReactivFormComponent } from './pages/reactiv-form/reactiv-form.component';
 import { PipesComponent } from './pages/pipes/pipes.component';
+import { Form3Component } from './form3/form3.component';
 
 export const routes: Routes = [
 
@@ -55,5 +56,8 @@ export const routes: Routes = [
     {
         path:'rjx',
         component:PipesComponent
+    },{
+        path:'form3',
+        component:Form3Component
     }
 ];

@@ -14,15 +14,16 @@ export class PipesComponent {
 master=inject(MasterService)
 currentvalue:string=''
 currentvalue2:string=''
-
 constructor(){
   this.master.onRolechange$.subscribe((role:string)=>{
       this.currentvalue=role;
   })
   this.master.Role$.subscribe((role2:string)=>{
       this.currentvalue2=role2;
-  })
-  
+  }) 
+}
+userlist(data:any){
+  this.master.getSessionData()
 }
 
 }

@@ -24,7 +24,6 @@ export class ReactivFormComponent {
   onsubmit(){
     if (this.studentData.valid) {
       console.log('Form Submitted:', this.studentData.value);
-  
     }
     else {
       console.log("invalid");
