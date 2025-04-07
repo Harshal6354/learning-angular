@@ -7,29 +7,32 @@ import { Component, inject, OnInit } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './ng-container.component.html',
-  styleUrl: './ng-container.component.css'
+  styleUrl: './ng-container.component.css',
 })
-export class NgContainerComponent  implements OnInit{
+export class NgContainerComponent implements OnInit {
   ngOnInit() {
     this.getUser();
-    
   }
- isvisible:boolean=true;
- api_key='https://projectapi.gerasim.in/api/CollegeProject/getProjectByUser'
+  isvisible: boolean = true;
+  api_key = 'https://projectapi.gerasim.in/api/CollegeProject/getProjectByUser';
 
- http=inject(HttpClient)
-userlist:any[]=[]
-isApi:Boolean=false;
- 
- getUser(){
-  this.isApi=true;
-  this.http.get(`${this.api_key}`).subscribe((res:any)=>{
-    this.userlist=res;
-    this.isApi=false;
-    
-  })
- }
+  http = inject(HttpClient);
+  userlist: any[] = [];
+  isApi: Boolean = false;
 
- 
-
+  getUser() {
+    this.isApi = true;
+    this.http.get(`${this.api_key}`).subscribe((res: any) => {
+      this.userlist = res;
+      this.isApi = false;
+    });
+  }
+  mycondition: boolean = false;
+  myresult: any;
+  getapi() {
+    this.http.get(`${this.api_key}`).subscribe((res: any) => {
+      this.mycondition = true;
+      this.myresult = res;
+    });
+  }
 }
