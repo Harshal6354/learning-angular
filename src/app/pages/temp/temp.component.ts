@@ -6,11 +6,10 @@ import {
   ViewContainerRef,
 } from '@angular/core';
 @Component({
-  selector: 'app-temp',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './temp.component.html',
-  styleUrl: './temp.component.css',
+    selector: 'app-temp',
+    imports: [CommonModule],
+    templateUrl: './temp.component.html',
+    styleUrl: './temp.component.css'
 })
 export class TempComponent {
   isloggedInUser: boolean = false;

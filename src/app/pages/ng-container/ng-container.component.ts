@@ -7,32 +7,41 @@ import { Component, inject, OnInit } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './ng-container.component.html',
-  styleUrl: './ng-container.component.css',
+  styleUrls: ['./ng-container.component.css'],
 })
 export class NgContainerComponent implements OnInit {
+  http = inject(HttpClient);
+  isvisible: boolean = true;
+  isApi: boolean = false;
+  userlist: any[] = [];
+  userlist2: any[] = [];
+  api_key = 'https://jsonplaceholder.typicode.com/users';
+  api2 = 'https://picsum.photos/v2/list?page=2&limit=5';
+
+  // /api/api/CollegeProject/getProjectByUser
+
   ngOnInit() {
     this.getUser();
   }
-  isvisible: boolean = true;
-  api_key = 'https://projectapi.gerasim.in/api/CollegeProject/getProjectByUser';
-
-  http = inject(HttpClient);
-  userlist: any[] = [];
-  isApi: Boolean = false;
 
   getUser() {
     this.isApi = true;
-    this.http.get(`${this.api_key}`).subscribe((res: any) => {
+    this.http.get<any[]>(this.api_key).subscribe((res) => {
       this.userlist = res;
       this.isApi = false;
     });
   }
-  mycondition: boolean = false;
-  myresult: any;
-  getapi() {
-    this.http.get(`${this.api_key}`).subscribe((res: any) => {
-      this.mycondition = true;
-      this.myresult = res;
+  getImg() {
+    this.http.get(this.api2).subscribe((res: any) => {
+      this.userlist2 = res;
     });
+  }
+
+  getapi() {
+    this.getUser();
+  }
+
+  trackByFn(index: number, item: any): number {
+    return index;
   }
 }
